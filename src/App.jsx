@@ -68,9 +68,7 @@ function App() {
 						animate="visible"
 					>
 						<div className="text-lg font-bold w-1/5 flex justify-start">
-							<motion.a onClick={() => smoothScroll("#home")}>
-								<img src={Logo} alt="SWBlends Logo" className="max-h-24 max-w-24" />
-							</motion.a>
+							<img src={Logo} alt="SWBlends Logo" className="max-h-24 max-w-24" onClick={() => smoothScroll("#home")} />
 						</div>
 						<div className="flex gap-12 rounded-full py-3 px-6 items-center justify-center w-3/5">
 							<div className="flex bg-[#22212E] border-slate-600 border gap-12 rounded-full py-3 px-6">
@@ -107,7 +105,7 @@ function App() {
 							<a href="https://calendly.com/sander-woodward-tphs/45minhair" target="_blank" rel="noreferrer">
 								<motion.button
 									className="bg-accent text-gray-900 px-4 py-2 rounded-full font-semibold"
-									whileHover={{ scale: 1.1, backgroundColor: "#f56d64" }}
+									whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
 									transition={{ type: "spring", stiffness: 150 }}
 									variants={staggeredVariants(0.4)}
 								>
@@ -134,18 +132,11 @@ function App() {
 						</p>
 						<div className="flex justify-center space-x-4">
 							<motion.button
-								className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold"
-								whileHover={{ scale: 1.1, backgroundColor: "#f56d64" }}
-								transition={{ type: "spring", stiffness: 150 }}
-							>
-								Get Notified
-							</motion.button>
-							<motion.button
 								className="border border-accent text-accent px-6 py-2 rounded-full font-semibold"
-								whileHover={{ scale: 1.1, backgroundColor: "#f56d64", color: "#111827" }}
+								whileHover={{ scale: 1.1, backgroundColor: "#7692FF", color: "#111827" }}
 								transition={{ type: "spring", stiffness: 150 }}
 							>
-								See Services
+								Book Now
 							</motion.button>
 						</div>
 					</motion.div>
@@ -206,9 +197,7 @@ function App() {
 								initial="hidden"
 								animate="visible"
 							>
-								<img src={Client1} alt="Client 1 Haircut" className="w-full h-64 object-cover rounded-lg mb-4" />
-								<p className="text-gray-300 font-semibold mb-2">"Amazing fade and style!"</p>
-								<p className="text-gray-400">– Client 1</p>
+								<img src={Client1} alt="Client 1 Haircut" className="w-full h-96 object-cover rounded-lg" />
 							</motion.div>
 							<motion.div
 								className="bg-gray-800 rounded-lg overflow-hidden p-4"
@@ -216,9 +205,7 @@ function App() {
 								initial="hidden"
 								animate="visible"
 							>
-								<img src={Client2} alt="Client 2 Haircut" className="w-full h-64 object-cover rounded-lg mb-4" />
-								<p className="text-gray-300 font-semibold mb-2">"Best barber experience I've had!"</p>
-								<p className="text-gray-400">– Client 2</p>
+								<img src={Client2} alt="Client 2 Haircut" className="w-full h-96 object-cover rounded-lg" />
 							</motion.div>
 							<motion.div
 								className="bg-gray-800 rounded-lg overflow-hidden p-4"
@@ -226,9 +213,7 @@ function App() {
 								initial="hidden"
 								animate="visible"
 							>
-								<img src={Client3} alt="Client 3 Haircut" className="w-full h-64 object-cover rounded-lg mb-4" />
-								<p className="text-gray-300 font-semibold mb-2">"Loving the clean cut!"</p>
-								<p className="text-gray-400">– Client 3</p>
+								<img src={Client3} alt="Client 3 Haircut" className="w-full h-96 object-cover rounded-lg" />
 							</motion.div>
 						</div>
 					</motion.div>
@@ -244,13 +229,13 @@ function App() {
 						<h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
 						<p className="text-gray-400">Hear from some of our satisfied customers.</p>
 						<div className="mt-8 flex flex-col lg:flex-row gap-8">
-							<div className="bg-gray-800 p-6 rounded-lg">
-								<p>"Best barber experience I've had. The attention to detail is unmatched!"</p>
-								<p className="text-accent font-semibold mt-2">– John D.</p>
+							<div className="bg-gray-800 p-6 rounded-lg max-w-96">
+								<p>"Best barber experience I've had. Loved the scissor cut!"</p>
+								<p className="text-accent font-semibold mt-2">– Oisin D.</p>
 							</div>
-							<div className="bg-gray-800 p-6 rounded-lg">
+							<div className="bg-gray-800 p-6 rounded-lg max-w-96">
 								<p>"Amazing service and quality cuts. I always leave feeling fresh and confident."</p>
-								<p className="text-accent font-semibold mt-2">– Alex P.</p>
+								<p className="text-accent font-semibold mt-2">– Leo</p>
 							</div>
 						</div>
 					</motion.div>

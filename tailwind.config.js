@@ -4,9 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				// accent: "#7692FF", DARK BLUE
-				// accent: "#28AFB0", BLUEISH GREEN
-				accent: "#EB5E55", // RED
+				accent: "#7692FF",
 			},
 		},
 	},
