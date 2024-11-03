@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7f19570d.css",
+    "main.js": "/static/js/main.011997af.js",
+    "static/media/client2.jpg": "/static/media/client2.3f625e229c45b2f103de.jpg",
+    "static/media/client1.jpg": "/static/media/client1.4eaf9abd2cfd171fc14b.jpg",
+    "static/media/client3.jpg": "/static/media/client3.d8aaacfffb7c10283e9d.jpg",
+    "static/media/swblends_logo.png": "/static/media/swblends_logo.2f9f27b4f53a699041d9.png",
+    "index.html": "/index.html",
+    "main.7f19570d.css.map": "/static/css/main.7f19570d.css.map",
+    "main.011997af.js.map": "/static/js/main.011997af.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f19570d.css",
+    "static/js/main.011997af.js"
+  ]
+}
