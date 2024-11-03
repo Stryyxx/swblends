@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./assets/images/swblends_logo.png";
 import Client1 from "./assets/images/client1.jpg";
 import Client2 from "./assets/images/client2.jpg";
 import Client3 from "./assets/images/client3.jpg";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	// Smooth scroll function
 	const smoothScroll = (id) => {
 		document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+		setIsMenuOpen(false); // Close the menu after clicking
 	};
 
 	// Parallelogram animations for loading screen
@@ -34,6 +38,13 @@ function App() {
 		hidden: { opacity: 0, y: 50 },
 		visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay } },
 	});
+
+	// Slide-in menu variants
+	const slideInVariants = {
+		hidden: { x: "100%" },
+		visible: { x: 0, transition: { duration: 0.5, ease: "easeInOut" } },
+		exit: { x: "100%", transition: { duration: 0.5, ease: "easeInOut" } },
+	};
 
 	return (
 		<div className="App min-h-screen bg-gray-900 text-white flex flex-col items-center">
@@ -62,15 +73,29 @@ function App() {
 				<>
 					{/* Navbar */}
 					<motion.nav
-						className="w-full max-w-7xl flex justify-between items-center py-4 px-6 fixed top-0 z-50"
+						className="w-full max-w-7xl flex justify-between items-center py-4 px-6 fixed top-0"
 						variants={staggeredVariants(0.2)}
 						initial="hidden"
 						animate="visible"
 					>
 						<div className="text-lg font-bold w-1/5 flex justify-start">
-							<img src={Logo} alt="SWBlends Logo" className="max-h-24 max-w-24" onClick={() => smoothScroll("#home")} />
+							<img
+								src={Logo}
+								alt="SWBlends Logo"
+								className="max-h-24 max-w-24 cursor-pointer"
+								onClick={() => smoothScroll("#home")}
+							/>
 						</div>
-						<div className="flex gap-12 rounded-full py-3 px-6 items-center justify-center w-3/5">
+
+						{/* Hamburger Menu Icon for Mobile */}
+						<div className="md:hidden flex items-center">
+							<button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none text-accent text-3xl">
+								{isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+							</button>
+						</div>
+
+						{/* Desktop Menu */}
+						<div className="hidden md:flex gap-12 rounded-full py-3 px-6 items-center justify-center w-3/5">
 							<div className="flex bg-[#22212E] border-slate-600 border gap-12 rounded-full py-3 px-6">
 								<motion.a
 									onClick={() => smoothScroll("#services")}
@@ -101,7 +126,9 @@ function App() {
 								</motion.a>
 							</div>
 						</div>
-						<div className="flex w-1/5 justify-end">
+
+						{/* Book Now Button for Desktop */}
+						<div className="hidden md:flex w-1/5 justify-end">
 							<a href="https://calendly.com/sander-woodward-tphs/45minhair" target="_blank" rel="noreferrer">
 								<motion.button
 									className="bg-accent text-gray-900 px-4 py-2 rounded-full font-semibold"
@@ -114,6 +141,56 @@ function App() {
 							</a>
 						</div>
 					</motion.nav>
+
+					{/* Mobile Slide-in Menu */}
+					<AnimatePresence>
+						{isMenuOpen && (
+							<motion.div
+								initial="hidden"
+								animate="visible"
+								exit="exit"
+								variants={slideInVariants}
+								className="fixed top-0 right-0 bottom-0 w-3/5 bg-gray-800 p-6"
+							>
+								<div className="flex flex-col items-end gap-6 ">
+									<button
+										onClick={() => setIsMenuOpen(!isMenuOpen)}
+										className="focus:outline-none text-accent text-3xl "
+									>
+										{isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+									</button>
+									<motion.a
+										onClick={() => smoothScroll("#services")}
+										className="text-accent hover:text-slate-400 transition duration-200 cursor-pointer text-2xl"
+									>
+										Services
+									</motion.a>
+									<motion.a
+										onClick={() => smoothScroll("#gallery")}
+										className="text-accent hover:text-slate-400 transition duration-200 cursor-pointer text-2xl"
+									>
+										Gallery
+									</motion.a>
+									<motion.a
+										onClick={() => smoothScroll("#contact")}
+										className="text-accent hover:text-slate-400 transition duration-200 cursor-pointer text-2xl"
+									>
+										Contact
+									</motion.a>
+									<motion.a
+										href="https://calendly.com/sander-woodward-tphs/45minhair"
+										target="_blank"
+										rel="noreferrer"
+										className="bg-accent text-gray-900 px-4 py-2 rounded-full font-semibold mt-4 block text-center"
+										whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
+										transition={{ type: "spring", stiffness: 150 }}
+									>
+										Book Now
+									</motion.a>
+								</div>
+							</motion.div>
+						)}
+					</AnimatePresence>
 
 					{/* Hero Section */}
 					<motion.div
@@ -278,9 +355,6 @@ function App() {
 							<div className="flex space-x-6 mt-4 md:mt-0">
 								<a href="#services" className="hover:underline">
 									Services
-								</a>
-								<a href="#about" className="hover:underline">
-									About Us
 								</a>
 								<a href="#gallery" className="hover:underline">
 									Gallery
