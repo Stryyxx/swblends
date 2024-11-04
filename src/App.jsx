@@ -78,18 +78,20 @@ function App() {
 						initial="hidden"
 						animate="visible"
 					>
-						<div className="text-lg font-bold w-1/5 flex justify-start">
+						<div className="text-lg font-bold w-1/5">
 							<img
 								src={Logo}
 								alt="SWBlends Logo"
-								className="max-h-24 max-w-24 cursor-pointer"
+								className="md:max-h-24 md:max-w-24 cursor-pointer max-h-16 max-w-16"
 								onClick={() => smoothScroll("#home")}
 							/>
 						</div>
-
 						{/* Hamburger Menu Icon for Mobile */}
-						<div className="md:hidden flex items-center">
-							<button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none text-accent text-3xl">
+						<div className="md:hidden flex justify-end">
+							<button
+								onClick={() => setIsMenuOpen(!isMenuOpen)}
+								className="focus:outline-none text-accent text-3xl flex items-center"
+							>
 								{isMenuOpen ? <CloseIcon /> : <MenuIcon />}
 							</button>
 						</div>
@@ -131,7 +133,7 @@ function App() {
 						<div className="hidden md:flex w-1/5 justify-end">
 							<a href="https://calendly.com/sander-woodward-tphs/45minhair" target="_blank" rel="noreferrer">
 								<motion.button
-									className="bg-accent text-gray-900 px-4 py-2 rounded-full font-semibold"
+									className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold"
 									whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
 									transition={{ type: "spring", stiffness: 150 }}
 									variants={staggeredVariants(0.4)}
@@ -181,7 +183,7 @@ function App() {
 										href="https://calendly.com/sander-woodward-tphs/45minhair"
 										target="_blank"
 										rel="noreferrer"
-										className="bg-accent text-gray-900 px-4 py-2 rounded-full font-semibold mt-4 block text-center"
+										className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold mt-4 block text-center"
 										whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
 										transition={{ type: "spring", stiffness: 150 }}
 									>
