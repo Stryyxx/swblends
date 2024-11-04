@@ -131,7 +131,11 @@ function App() {
 
 						{/* Book Now Button for Desktop */}
 						<div className="hidden md:flex w-1/5 justify-end">
-							<a href="https://calendly.com/sander-woodward-tphs/45minhair" target="_blank" rel="noreferrer">
+							<a
+								href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e"
+								target="_blank"
+								rel="noreferrer"
+							>
 								<motion.button
 									className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold"
 									whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
@@ -180,7 +184,7 @@ function App() {
 										Contact
 									</motion.a>
 									<motion.a
-										href="https://calendly.com/sander-woodward-tphs/45minhair"
+										href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e"
 										target="_blank"
 										rel="noreferrer"
 										className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold mt-4 block text-center"
