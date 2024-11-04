@@ -19,23 +19,50 @@
 			content="SWBlends provides top-quality barber services including haircuts, beard trims, and grooming. Book your appointment today!"
 		/>
 		<meta property="og:url" content="https://www.swblends.com" />
+		<meta property="og:image" content="%PUBLIC_URL%/branding/logos/swblends_logo.png" />
+		<meta property="og:type" content="website" />
 		<link rel="canonical" href="https://www.swblends.com" />
 		<link rel="apple-touch-icon" href="%PUBLIC_URL%/branding/logos/swblends_logo.png" />
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 		<title>SWBlends Barbershop - Professional Barber Services in Manly</title>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "HairSalon",
+				"name": "SWBlends Barbershop",
+				"image": "https://www.swblends.com/branding/logos/swblends_logo.png",
+				"@id": "https://www.swblends.com",
+				"url": "https://www.swblends.com",
+				"telephone": "+61 420 352 509",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "16 Laurence Street",
+					"addressLocality": "Manly",
+					"addressRegion": "NSW",
+					"postalCode": "2095",
+					"addressCountry": "AU"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -33.7977,
+					"longitude": 151.2784
+				},
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+						"opens": "16:30",
+						"closes": "19:00"
+					}
+				],
+				"priceRange": "$$",
+				"description": "SWBlends Barbershop offers professional haircuts, beard grooming, and styling services in Manly. Book your appointment online today!",
+				"sameAs": "https://www.instagram.com/sw_blends_/"
+			}
+		</script>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
-		<!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 	</body>
 </html>
