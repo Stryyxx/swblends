@@ -214,7 +214,11 @@ function App() {
 							styles and shaves with finesse.
 						</p>
 						<div className="flex justify-center space-x-4">
-							<a href="https://calendly.com/sander-woodward-tphs/45minhair" target="_blank" rel="noreferrer">
+							<a
+								href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e"
+								target="_blank"
+								rel="noreferrer"
+							>
 								<motion.button
 									className="border border-accent text-accent px-6 py-2 rounded-full font-semibold"
 									whileHover={{ scale: 1.1, backgroundColor: "#7692FF", color: "#111827" }}
