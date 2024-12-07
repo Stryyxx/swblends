@@ -6,10 +6,12 @@ import Client2 from "./assets/images/client2.jpg";
 import Client3 from "./assets/images/client3.jpg";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import Modal from "./components/Modal";
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	// Smooth scroll function
 	const smoothScroll = (id) => {
@@ -131,16 +133,15 @@ function App() {
 
 						{/* Book Now Button for Desktop */}
 						<div className="hidden md:flex w-1/5 justify-end">
-							<a href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e" target="_blank" rel="noreferrer">
-								<motion.button
-									className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold"
-									whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
-									transition={{ type: "spring", stiffness: 150 }}
-									variants={staggeredVariants(0.4)}
-								>
-									Book Now
-								</motion.button>
-							</a>
+							<motion.button
+								className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold"
+								whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
+								transition={{ type: "spring", stiffness: 150 }}
+								variants={staggeredVariants(0.4)}
+								onClick={() => setIsModalOpen(true)}
+							>
+								Book Now
+							</motion.button>
 						</div>
 					</motion.nav>
 
@@ -155,7 +156,10 @@ function App() {
 								className="fixed top-0 right-0 bottom-0 w-3/5 bg-gray-800 p-6"
 							>
 								<div className="flex flex-col items-end gap-6 ">
-									<button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none text-accent text-3xl ">
+									<button
+										onClick={() => setIsMenuOpen(!isMenuOpen)}
+										className="focus:outline-none text-accent text-3xl "
+									>
 										{isMenuOpen ? <CloseIcon /> : <MenuIcon />}
 									</button>
 									<motion.a
@@ -176,16 +180,14 @@ function App() {
 									>
 										Contact
 									</motion.a>
-									<motion.a
-										href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e"
-										target="_blank"
-										rel="noreferrer"
+									<motion.button
 										className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold mt-4 block text-center"
 										whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
 										transition={{ type: "spring", stiffness: 150 }}
+										onClick={() => setIsModalOpen(true)}
 									>
 										Book Now
-									</motion.a>
+									</motion.button>
 								</div>
 							</motion.div>
 						)}
@@ -203,19 +205,18 @@ function App() {
 							Crafting Styles, <span className="text-accent">Confidently</span>
 						</h1>
 						<p className="text-lg text-gray-400 max-w-lg mx-auto mb-10">
-							Premium barbering services for gentlemen looking for a clean, sharp look. SWBlends provides top-notch styles and
-							shaves with finesse.
+							Premium barbering services for gentlemen looking for a clean, sharp look. SWBlends provides top-notch
+							styles and shaves with finesse.
 						</p>
 						<div className="flex justify-center space-x-4">
-							<a href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e" target="_blank" rel="noreferrer">
-								<motion.button
-									className="border border-accent text-accent px-6 py-2 rounded-full font-semibold"
-									whileHover={{ scale: 1.1, backgroundColor: "#7692FF", color: "#111827" }}
-									transition={{ type: "spring", stiffness: 150 }}
-								>
-									Book Now
-								</motion.button>
-							</a>
+							<motion.button
+								className="border border-accent text-accent px-6 py-2 rounded-full font-semibold"
+								whileHover={{ scale: 1.1, backgroundColor: "#7692FF", color: "#111827" }}
+								transition={{ type: "spring", stiffness: 150 }}
+								onClick={() => setIsModalOpen(true)}
+							>
+								Book Now
+							</motion.button>
 						</div>
 					</motion.div>
 
@@ -368,6 +369,7 @@ function App() {
 					</motion.footer>
 				</>
 			)}
+			<Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 		</div>
 	);
 }
