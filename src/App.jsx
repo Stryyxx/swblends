@@ -332,12 +332,6 @@ function App() {
 						<p className="text-gray-400">16 Laurence Street Manly</p>
 						<p className="text-gray-400">Sydney, Australia</p>
 						<p className="text-gray-400">
-							Phone:{" "}
-							<a href="tel:+61420352509" className="hover:text-white transition duration-200">
-								+61420352509
-							</a>
-						</p>
-						<p className="text-gray-400">
 							Email:{" "}
 							<a href="mailto:contact@swblends.com" className="hover:text-white transition duration-200">
 								contact@swblends.com
