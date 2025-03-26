@@ -13,7 +13,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }) => {
 			<div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center z-60 flex flex-col gap-4">
 				<h2 className="text-2xl font-bold text-white">Choose Your Cut</h2>
 				<div className="flex flex-col gap-4">
-					<a href="https://booktrybe.com/barber/1e7cebd1-9a82-4167-bf0c-d8c62dd44b5e">
+					<a href="https://trybe.au/swblends">
 						<motion.button
 							className="bg-accent text-gray-900 px-6 py-2 rounded-full font-semibold w-full"
 							whileHover={{ scale: 1.1, backgroundColor: "#879df5" }}
