@@ -341,7 +341,7 @@ const About = () => {
 									</div>
 									<div className="flex items-center">
 										<Clock size={18} className="text-primary mr-2" />
-										<p className="text-base-content opacity-80">Fri: 4pm-7pm, Mon-Thu, Sat-Sun: Closed</p>
+										<p className="text-base-content opacity-80">Fri: 4pm-7pm, Mon-Thur: Closed, Sat-Sun: Closed</p>
 									</div>
 								</div>
 								<p className="text-base-content opacity-80 mb-4">

@@ -132,7 +132,7 @@ const Home = () => {
 							Experience premium barbering in the heart of Manly, Sydney. Where tradition meets contemporary style.
 						</p>
 						<div className="mt-10 sm:flex sm:justify-center">
-							<div className="rounded-box shadow">
+							<div className="rounded-box">
 								<a
 									href="https://trybe.au/swblends"
 									target="_blank"
